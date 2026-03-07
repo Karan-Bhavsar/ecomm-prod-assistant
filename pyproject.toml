@@ -1,7 +1,13 @@
 [project]
 name = "ecomm-prod-assistant"
 version = "0.1.0"
-description = "Add your description here"
+description = "Ecommerce Product Assistant"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
+
+# keep dependencies empty since you already use requirements.txt
 dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["prod_assistant*"]

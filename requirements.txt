@@ -7,7 +7,10 @@ langchain-astradb==0.6.1
 langchain_core==0.3.75
 langchain-google-genai==2.1.8
 langchain-groq==0.3.6
+langchain-openai==0.3.32
+langchain-community==0.3.27
 lxml==6.0.1
+pandas==2.2.3
 python-dotenv==1.1.1
 python-multipart==0.0.20
 selenium==4.35.0
@@ -20,4 +23,10 @@ ragas==0.3.4
 langchain-mcp-adapters==0.1.10
 mcp==1.14.0
 ddgs==9.6.0
-langchain-openai==0.3.32
+sentence-transformers==2.2.2
+transformers==4.35.2
+tokenizers==0.15.2
+huggingface-hub==0.25.2
+torch==2.1.2
+numpy==1.26.4
+ 

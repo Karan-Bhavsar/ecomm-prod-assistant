@@ -2,16 +2,19 @@ astra_db:
   collection_name: "ecommercedata"
 
 embedding_model:
-  provider: "google"
-  model_name: "models/text-embedding-004"
+  provider: "local"
+  model_name: "sentence-transformers/all-MiniLM-L6-v2"
+  normalize: true
 
 retriever:
   top_k: 4
 
 llm:
+  default_provider: "groq"
+
   groq:
     provider: "groq"
-    model_name: "deepseek-r1-distill-llama-70b"
+    model_name: "llama-3.3-70b-versatile"
     temperature: 0
     max_output_tokens: 2048
 
@@ -22,6 +25,7 @@ llm:
     max_output_tokens: 2048
 
   openai:
-     provider: "openai"
-     model_name: "gpt-4o"
-     temperature: 0
+    provider: "openai"
+    model_name: "gpt-4o"
+    temperature: 0
+    max_output_tokens: 2048
