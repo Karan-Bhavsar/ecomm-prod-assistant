@@ -2,9 +2,9 @@ from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 
-from prompt_library.prompts import PROMPT_REGISTRY, PromptType
-from retriever.retrieval import Retriever
-from utils.model_loader import ModelLoader
+from prod_assistant.prompt_library.prompts import PROMPT_REGISTRY, PromptType
+from prod_assistant.retriever.retrieval import Retriever
+from prod_assistant.utils.model_loader import ModelLoader
 #from evaluation.ragas_eval import evaluate_context_precision, evaluate_response_relevancy
 
 retriever_obj = Retriever()
@@ -110,7 +110,7 @@ def invoke_chain(query: str, debug: bool = False):
     
 if __name__ == "__main__":
     try:
-        answer = invoke_chain("can you tell me the price of the iPhone 15?")
+        answer = invoke_chain("can you tell me the price of the iPhone 16?")
         print("\n Assistant Answer:\n", answer)
     except Exception as e:
         import traceback
