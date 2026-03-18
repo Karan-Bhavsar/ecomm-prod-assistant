@@ -29,5 +29,5 @@ async def index(request: Request):
 @app.post("/get")
 async def chat(msg: str = Form(...)):
     rag_agent = AgenticRAG()
-    answer = rag_agent.run(msg)
-    return answer
+    result = rag_agent.run(msg)
+    return result['answer']

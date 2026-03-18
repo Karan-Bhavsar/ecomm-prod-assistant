@@ -9,11 +9,12 @@ body, html {
     margin: auto;
 }
 
+/* Increased chatbot size */
 .card {
-    height: 80vh;
+    height: 85vh; /* increased from 80vh */
     border-radius: 20px;
     background-color: rgba(0, 0, 0, 0.4);
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5);
 }
 
 .card-header {
@@ -21,29 +22,32 @@ body, html {
     color: white;
     border-radius: 20px 20px 0 0;
     border: none;
-    padding: 15px;
+    padding: 18px;
 }
 
+/* Increased message area */
 .msg_card_body {
     overflow-y: auto;
     background: #e9f3fb;
     padding: 20px;
+    height: 450px; /* increased chat message height */
 }
 
 .card-footer {
     border-top: none;
     background: white;
     border-radius: 0 0 20px 20px;
-    padding: 10px;
+    padding: 12px;
 }
 
 .type_msg {
     background-color: rgba(0, 0, 0, 0.3);
     color: white;
     border: none;
-    height: 50px;
+    height: 55px; /* increased input size */
     border-radius: 15px;
-    padding: 10px;
+    padding: 12px;
+    font-size: 16px;
 }
 
 .type_msg:focus {
@@ -58,37 +62,42 @@ body, html {
     border-radius: 0 15px 15px 0;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    padding: 0 20px;
 }
 
 .send_btn:hover {
     background-color: #4791ff;
 }
 
+/* BOT message */
 .msg_cotainer {
     background: white;
     color: black;
-    padding: 10px 15px;
+    padding: 12px 16px;
     border-radius: 20px;
     margin-left: 10px;
-    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.12);
     position: relative;
-    max-width: 70%;
+    max-width: 80%; /* increased from 70% */
+    font-size: 15px;
 }
 
+/* USER message */
 .msg_cotainer_send {
     background: #ffe033; /* Flipkart Yellow */
-    padding: 10px 15px;
+    padding: 12px 16px;
     border-radius: 20px;
     margin-right: 10px;
-    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
     position: relative;
-    max-width: 70%;
+    max-width: 80%;
+    font-size: 15px;
 }
 
 .msg_time, .msg_time_send {
     position: absolute;
-    font-size: 10px;
-    color: rgba(0, 0, 0, 0.4);
+    font-size: 11px;
+    color: rgba(0, 0, 0, 0.45);
 }
 
 .msg_time {
@@ -102,10 +111,11 @@ body, html {
 }
 
 .img_cont, .img_cont_msg img {
-    width: 45px;
-    height: 45px;
+    width: 50px; /* slightly larger avatars */
+    height: 50px;
 }
 
+/* Online indicator */
 .online_icon {
     position: absolute;
     height: 15px;
@@ -117,6 +127,7 @@ body, html {
     border: 1.5px solid white;
 }
 
+/* Header text */
 .user_info span {
     font-size: 22px;
     font-weight: bold;
@@ -128,7 +139,7 @@ body, html {
     margin: 0;
 }
 
-/* Optional - smooth message scroll */
+/* Smooth scroll for messages */
 #messageFormeight {
     scroll-behavior: smooth;
 }
@@ -138,7 +149,12 @@ body, html {
     .chat {
         padding: 10px;
     }
+
     .card {
-        height: 90vh;
+        height: 92vh;
+    }
+
+    .msg_card_body {
+        height: 60vh;
     }
 }

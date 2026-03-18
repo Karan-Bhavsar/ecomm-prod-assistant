@@ -6,7 +6,9 @@ readme = "README.md"
 requires-python = ">=3.11"
 
 # keep dependencies empty since you already use requirements.txt
-dependencies = []
+dependencies = [
+    "duckduckgo-search>=8.1.1",
+]
 
 [tool.setuptools.packages.find]
 where = ["."]
