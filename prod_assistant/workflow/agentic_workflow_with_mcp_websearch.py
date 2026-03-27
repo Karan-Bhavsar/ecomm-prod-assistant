@@ -1,17 +1,22 @@
 from typing import Annotated, Sequence, TypedDict, Literal
+import os
+import asyncio
+import traceback
+
 from langchain_core.messages import BaseMessage, HumanMessage
 from langchain_core.prompts import ChatPromptTemplate, PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
+
 from langgraph.graph import StateGraph, START, END
 from langgraph.graph.message import add_messages
 from langgraph.checkpoint.memory import MemorySaver
 
+from langchain_mcp_adapters.client import MultiServerMCPClient
+
 from prod_assistant.prompt_library.prompts import PROMPT_REGISTRY, PromptType
 from prod_assistant.retriever.retrieval import Retriever
 from prod_assistant.utils.model_loader import ModelLoader
-from prod_assistant.evaluation.ragas_eval import evaluate_context_precision, evaluate_response_relevancy
-from langchain_mcp_adapters.client import MultiServerMCPClient
-import asyncio
+
 
 class AgenticRAG:
     """Agentic RAG pipeline using LangGraph + MCP (Retriever + WebSearch)."""
@@ -182,7 +187,11 @@ class AgenticRAG:
         return result["messages"][-1].content
 
 # ---------- Standalone Test ----------
-if __name__ == "__main__":
-    rag_agent = AgenticRAG()
-    answer = rag_agent.run("What is the price of iPhone 16?")
+async def main():
+    rag_agent = await AgenticRAG.create()
+    answer = await rag_agent.run("What is the price of iPhone 14?")
     print("\nFinal Answer:\n", answer)
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
